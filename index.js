@@ -29,6 +29,35 @@ function test() {
 
 test();
 
+//operator
+console.log('2'==2);//true, check only the values
+console.log('2'===2);//false, check data type and values
+//Note: if you compare the object reference it will check both references points same object or not
+
+//named function
+function printSomething() {
+  console.log("printing Hello World");
+}
+printSomething();
+
+//anonymous function
+let annFun = function () {
+  console.log("printing Hello World from anonymous function ");
+};
+annFun();
+
+//IIFE Immediately Invoke Function Expression
+
+(function () {
+  console.log("printing Hello World from IIFE");
+})();
+
+//arrow function
+let arrowFun = () => {
+  console.log("printing Hello World from arrow function ");
+};
+arrowFun();
+
 //JS Object
 let obj = {
   name: "AZAM",
@@ -68,38 +97,37 @@ objArr.forEach((item) => {
 });
 
 //map method
-let names = objArr.map((item)=>{
-    return item.name;
+let names = objArr.map((item) => {
+  return item.name;
 });
 console.log(names);
 
 //filter method
-let filtered = objArr.filter((item)=>{
-    return item.age > 30;
+let filtered = objArr.filter((item) => {
+  return item.age > 30;
 });
 console.log(filtered);
 
 //reduce method
-let totalAge = objArr.reduce((total,item)=>{
-    return total + item.age;
-},0);
+let totalAge = objArr.reduce((total, item) => {
+  return total + item.age;
+}, 0);
 console.log(totalAge);
 
 //every method
-let isAllSeniour = objArr.every((items)=>{
-    return items.age > 20;
+let isAllSeniour = objArr.every((items) => {
+  return items.age > 20;
 });
 console.log(isAllSeniour);
 
 //some method
-let isSomeSenior = objArr.some((items)=>{
-    return items.age > 30;
+let isSomeSenior = objArr.some((items) => {
+  return items.age > 30;
 });
 console.log(isSomeSenior);
 
 //find method
-let senior = objArr.find((items)=>{
-    return items.address=='Bangalore';
+let senior = objArr.find((items) => {
+  return items.address == "Bangalore";
 });
 console.log(senior);
-
