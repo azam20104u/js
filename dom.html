@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("<h1 id='h1id'>Create H1 tag by document write method</h1>");
+        document.write("<button onclick='changeText()'>change the H1 text</button");
+        let el=document.createElement('h2');
+        el.innerText='Create H2 tag by createElement method';
+        document.body.append(el);
+        let parentElement=document.createElement('ol');
+        parentElement.innerText='Create OL tag by createElement method';
+        let childElement=document.createElement('li');
+        childElement.innerText='Create LI tag by createElement method';
+        parentElement.appendChild(childElement);
+        document.body.append(parentElement);
+        function changeText() {
+            alert('changeText() executed');
+            let el=document.getElementById('h1id');
+            el.innerText='Hello World';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<script>
+  //===build in promises===
+  fetch("person.json")
+    .then((res) => {
+      res.json().then((data) => {
+        console.log("by using fetch:", data);
+      });
+    })
+    .catch((rej) => {
+      console.log(rej);
+    });
+  //===third party promises===
+  axios("person.json").then((res) => {
+    console.log("by using axios: ", res.data);
+  });
+  axios("https://jsonplaceholder.typicode.com/users")
+  .then((res)=>{
+    console.log(res.data);
+  })
+</script>

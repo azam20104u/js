@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form validation</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Login form</legend>
+      <form action="#">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" /><br />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" /><br />
+        <span id="sp"></span><br />
+        <button type="submit" onclick="validate()">Login</button>
+      </form>
+    </fieldset>
+    <script>
+      function validate() {
+        var password = document.getElementById("password").value;
+        if (password == "" && password <= 7) {
+          let el = document.getElementById("sp");
+          el.innerText = "Password can't be empty or less than 8 character";
+          el.style.color = "red";
+        }
+      }
+    </script>
+  </body>
+</html>
